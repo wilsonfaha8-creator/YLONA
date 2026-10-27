@@ -1,0 +1,59 @@
+/* ✨ Renforcer les lumières célestes */
+
+body {
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(255, 210, 235, 0.65),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(226, 205, 255, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(255, 190, 225, 0.4),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #fff5fb 0%,
+            #ffeaf5 50%,
+            #fffaff 100%
+        ) !important;
+}
+
+/* Halo lumineux animé */
+
+body::before {
+    content: "✦ 🕊️   ✧  ·   🕊️✦   ✧";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255, 255, 255, 0.8),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 80% 40%,
+            rgba(255, 190, 230, 0.25),
+            transparent 100%
+        );
+    filter: blur(25px);
+    animation: halo-paradis 8s ease-in-out infinite alternate;
+}
+
+@keyframes halo-paradis {
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

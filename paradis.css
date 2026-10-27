@@ -1,0 +1,101 @@
+/* ✨ FOND PARADIS CÉLESTE */
+
+html {
+    min-height: 100%;
+    background: #fffaff;
+}
+body {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255, 255, 255, 0.95),
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse at 10% 35%,
+            rgba(255, 190, 220, 0.5),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 90% 60%,
+            rgba(210, 190, 255, 0.4),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #fffaff 0%,
+            #fff0f7 50%,
+            #fffdfd 100%
+        ) !important;
+}
+
+/* Lumières douces */
+body::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background:
+        radial-gradient(
+            ellipse at 50% 5%,
+            rgba(255, 255, 255, 0.8),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 15% 60%,
+            rgba(255, 190, 225, 0.25),
+            transparent 100%
+        );
+    content: "✦  ✧ 🕊️  ·   ✦  🕊️ ✧";
+    filter: blur(20px);
+    pointer-events: none;
+    animation: lumiere-celeste 10s ease-in-out infinite alternate;
+}
+
+/* Étoiles délicates */
+body::after {
+    position: fixed;
+    top: 12%;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    color: rgba(174, 91, 145, 0.45);
+    font-size: 80px;
+    letter-spacing: 15px;
+    text-align: center;
+    content: "✦ 🕊️ ✧  ·   ✦   🕊️✧";
+    pointer-events: none;
+    animation: scintillement 3s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes lumiere-celeste {
+    from {
+        opacity: 0.45;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scintillement {
+    from {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0.9;
+        transform: translateY(-8px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none;
+    }
+}
